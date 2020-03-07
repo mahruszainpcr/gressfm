@@ -14,15 +14,15 @@
 
                 <div class="menu_wrapper">
                     <div class="add1 clearfix">
-                        <div class="icon-search"><a href="#"></a></div>
+                        <div class="icon-search"><a href="<?=base_url('awal')?>#"></a></div>
                         <!-- <div class="dropdown dropdown1">
                                 <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
                                         aria-haspopup="true" aria-expanded="true">EN
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                    <li><a href="javascript:void(0);">FR</a></li>
-                                    <li><a href="javascript:void(0);">DE</a></li>
-                                    <li><a href="javascript:void(0);">ES</a></li>
+                                    <li><a href="<?=base_url('awal')?>javascript:void(0);">FR</a></li>
+                                    <li><a href="<?=base_url('awal')?>javascript:void(0);">DE</a></li>
+                                    <li><a href="<?=base_url('awal')?>javascript:void(0);">ES</a></li>
                                 </ul>
                             </div> -->
                     </div>
@@ -36,21 +36,20 @@
                         </button>
                         <div class="navbar-collapse navbar-collapse_ collapse">
                             <ul class="nav navbar-nav sf-menu clearfix">
-                                <li class="sub-menu sub-menu-1"><a href="<?=base_url('awal/index')?>">Home</a>
+                                <li class="sub-menu sub-menu-1"><a href="<?=base_url('awal')?>#home">Home<em></em></a>
 
                                 </li>
-                                <li><a href="#featured">FEATURED</a></li>
-                                <li><a href="#collection">Our DJ</a></li>
-                                <li class="sub-menu sub-menu-1"><a href="javascript:void(0);">pages<em></em></a>
+                                <li><a href="<?=base_url('awal')?>#featured">FEATURED</a></li>
+                                <li><a href="<?=base_url('awal')?>#collection">Our DJ</a></li>
+                                <li class="sub-menu sub-menu-1"><a href="javascript:void(0);">Halaman<em></em></a>
                                     <ul>
-                                        <li><a href="<?=base_url('awal/aboutPage')?>">ABOUT US </a></li>
-                                        <li><a href="<?=base_url('awal/galleryPage')?>">GALLERY</a></li>
-                                        <li><a href="#news">NEWS </a></li>
-
+                                        <li><a href="<?=base_url('awal/aboutPage')?>">Tentang</a></li>
+                                        <li><a href="<?=base_url('awal')?>#news">Berita</a></li>
+                                        <li><a href="<?=base_url('awal/galleryPage')?>#news">Galeri</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#testimonial">Testimonial</a></li>
-                                <li><a href="#contacts">Contact us</a></li>
+                                <li><a href="<?=base_url('awal')?>#testimonial">Testimonial</a></li>
+                                <li><a href="<?=base_url('awal')?>#contacts">Contact us</a></li>
                             </ul>
                         </div>
                     </div>
