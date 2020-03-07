@@ -1,6 +1,149 @@
 
+<<<<<<< HEAD
    
     
+=======
+    <div id="home">
+        <div class="logo3_wrapper">
+           
+              <h2 class="font-weight-bold">Gress FM</h2>
+        
+        </div>
+        <div class="add1 add2 clearfix">
+            <div class="icon-search"><a href="#"></a></div>
+            <!-- <div class="dropdown dropdown1">
+                <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="true">EN
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><a href="javascript:void(0);">FR</a></li>
+                    <li><a href="javascript:void(0);">DE</a></li>
+                    <li><a href="javascript:void(0);">ES</a></li>
+                </ul>
+            </div> -->
+        </div>
+        <div id="slider_wrapper">
+            <div class="go-down"><a href="#featured" class="scroll-to"></a></div>
+            <div class="">
+                <div id="slider_inner" class="clearfix">
+                    <div id="slider" class="clearfix">
+                        <div id="camera_wrap">
+
+                            <div data-src="<?= base_url('site/'); ?>images/bg-kuning.jpg" class="img-responsive">
+                                <div class="camera_caption fadeFromLeft nav1">
+                                    <div class="txt1 txt">GRESS RADIO FM</div>
+                                    <div class="txt2 txt">MORE THAN</div>
+                                    <div class="txt3 txt">MUSIC</div>
+                                    <div class="txt4">105.8 FM</div>
+                                    <!-- <div class="txt5"><a href="#" class="btn-default btn0">MORE INFORMATION</a></div> -->
+                                </div>
+                            </div>
+                            <div data-src="<?= base_url('site/'); ?>images/studio.jpg" class="img-responsive">
+                                <div class="camera_caption fadeFromLeft nav1">
+                                    <div class="txt1 txt">MORE THAN</div>
+                                    <div class="txt2 txt">JUST</div>
+                                    <div class="txt3 txt">MUSIC</div>
+                                    <div class="txt4">06:00 - 24:00</div>
+                                    <div class="txt5"><a href="#" class="btn-default btn0">STAY TUNE!</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="song1_wrapper">
+            <div class="container">
+                <div class="song1_inner clearfix">
+                    <div class="song1 clearfix">
+                        <div class="left clearfix">
+                            <figure><img src="<?= base_url('site/'); ?>images/artist/microphone.png" style="height:90px;width:auto;" alt=""></figure>
+                            <div class="caption">
+                                <div class="txt1">Song Name: Once (Tsapa Music)</div>
+                                <div class="txt2">Jonathan McDonald</div>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="audio1">
+                                <audio controls="controls" class="audio" autoplay="autoplay" style="width: 100%; visibility: hidden;">
+                                    <source type="audio/mpeg" src="<?= base_url('site/'); ?>audio/719569_once_by_tsapa_preview.mp3"/>
+                                    <source type="audio/mpeg" src="<?= base_url('site/'); ?>audio/651897_tune_by_tsapa_preview.mp3"/>
+                                    <source type="audio/mpeg" src="<?= base_url('site/'); ?>audio/13930845_jazz-samba-1_by_abmode_preview.mp3"/>
+                                    <source type="audio/mpeg" src="<?= base_url('site/'); ?>audio/14841711_jazz-samba-2_by_abmode_preview.mp3"/>
+                                </audio>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="top1">
+        <div class="top2_wrapper" id="top2">
+            <div class="container">
+
+                <div class="top2 clearfix">
+
+                    <header>
+                        <div class="logo_wrapper">
+                          
+                                <h3 style="letter-spacing:1px;">Gress FM Radio  </h3>
+                       
+                        </div>
+                    </header>
+
+                    <div class="menu_wrapper">
+                        <div class="add1 clearfix">
+                            <div class="icon-search"><a href="#"></a></div>
+                            <!-- <div class="dropdown dropdown1">
+                                <button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="true">EN
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                    <li><a href="javascript:void(0);">FR</a></li>
+                                    <li><a href="javascript:void(0);">DE</a></li>
+                                    <li><a href="javascript:void(0);">ES</a></li>
+                                </ul>
+                            </div> -->
+                        </div>
+                        <div class="navbar navbar_ navbar-default">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                    data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <div class="navbar-collapse navbar-collapse_ collapse">
+                                <ul class="nav navbar-nav sf-menu clearfix">
+                                    <li class="sub-menu sub-menu-1"><a href="#home">Home<em></em></a>
+                                        
+                                    </li>
+                                    <li><a href="#featured">FEATURED</a></li>
+                                    <li><a href="#collection">Our DJ</a></li>
+                                    <li class="sub-menu sub-menu-1"><a href="javascript:void(0);">pages<em></em></a>
+                                        <ul>
+                                            <li><a href="<?= base_url('awal/aboutPage') ?>">ABOUT US PAGE</a></li>
+                                            <li><a href="#news">NEWS PAGE</a></li>
+                                          
+                                        </ul>
+                                    </li>
+                                    <li><a href="#testimonial">Testimonial</a></li>
+                                    <li><a href="#contacts">Contact us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+>>>>>>> d04ba2d49e43028dd6155ac08abcc8bcf2a6132c
 
     <div id="featured">
         <div class="container">

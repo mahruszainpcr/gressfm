@@ -9,7 +9,11 @@
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
         <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
+=======
+        <form action="<?php echo $action; ?>" method="post">
+>>>>>>> d04ba2d49e43028dd6155ac08abcc8bcf2a6132c
 	    <div class="form-group">
             <label for="varchar">Nama Dj <?php echo form_error('nama_dj') ?></label>
             <input type="text" class="form-control" name="nama_dj" id="nama_dj" placeholder="Nama Dj" value="<?php echo $nama_dj; ?>" />
@@ -20,7 +24,11 @@
         </div>
 	    <div class="form-group">
             <label for="varchar">Foto <?php echo form_error('foto') ?></label>
+<<<<<<< HEAD
             <input type="file" class="form-control" name="foto" id="foto" placeholder="Foto" value="<?php echo $foto; ?>" />
+=======
+            <input type="text" class="form-control" name="foto" id="foto" placeholder="Foto" value="<?php echo $foto; ?>" />
+>>>>>>> d04ba2d49e43028dd6155ac08abcc8bcf2a6132c
         </div>
 	    <div class="form-group">
             <label for="int">Is Active <?php echo form_error('is_active') ?></label>
