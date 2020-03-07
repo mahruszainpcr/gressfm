@@ -36,15 +36,16 @@
                         </button>
                         <div class="navbar-collapse navbar-collapse_ collapse">
                             <ul class="nav navbar-nav sf-menu clearfix">
-                                <li class="sub-menu sub-menu-1"><a href="#home">Home<em></em></a>
+                                <li class="sub-menu sub-menu-1"><a href="<?=base_url('awal/index')?>">Home</a>
 
                                 </li>
                                 <li><a href="#featured">FEATURED</a></li>
                                 <li><a href="#collection">Our DJ</a></li>
                                 <li class="sub-menu sub-menu-1"><a href="javascript:void(0);">pages<em></em></a>
                                     <ul>
-                                        <li><a href="<?=base_url('awal/aboutPage')?>">ABOUT US PAGE</a></li>
-                                        <li><a href="#news">NEWS PAGE</a></li>
+                                        <li><a href="<?=base_url('awal/aboutPage')?>">ABOUT US </a></li>
+                                        <li><a href="<?=base_url('awal/galleryPage')?>">GALLERY</a></li>
+                                        <li><a href="#news">NEWS </a></li>
 
                                     </ul>
                                 </li>
