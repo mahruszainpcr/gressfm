@@ -63,62 +63,24 @@
 
         <div align="center">
             <button class="btn btn-default filter-button" data-filter="all">All</button>
-            <button class="btn btn-default filter-button" data-filter="Weekend">Weekend</button>
-            <button class="btn btn-default filter-button" data-filter="Event">Event</button>
-            <button class="btn btn-default filter-button" data-filter="Donation">Donation Weeks</button>
-            <button class="btn btn-default filter-button" data-filter="Goes">Goes to Studio</button>
+            <?php 
+		foreach($galeri_judul as $u){ 
+		?>
+            <button class="btn btn-default filter-button" data-filter="<?= $u->judul ?>"><?= $u->judul ?></button>
+        <?php } ?>
+         
         </div>
         <br/>
 
+        <?php 
+		foreach($galeri as $u){ 
+		?>
 
-
-            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter Weekend">
-                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
+            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter <?= $u->judul ?>">
+                <img src="<?=base_url('assets/galeri/'.$u->foto);?>" style="height:365px; width:365px;" class="img-responsive">
             </div>
 
-            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter Event">
-                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-            </div>
-
-            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter Weekend">
-                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-            </div>
-
-            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter Goes">
-                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-            </div>
-
-            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter Donation">
-                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-            </div>
-
-            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter Goes">
-                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-            </div>
-
-            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter Donation">
-                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-            </div>
-
-            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter Goes">
-                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-            </div>
-
-            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter Goes">
-                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-            </div>
-
-            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter Weekend">
-                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-            </div>
-
-            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter Donation">
-                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-            </div>
-
-            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter Event">
-                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-            </div>
+        <?php } ?>
         </div>
     </div>
     </div>

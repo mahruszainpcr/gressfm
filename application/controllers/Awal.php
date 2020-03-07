@@ -13,6 +13,7 @@ class Awal extends CI_Controller
         $this->load->model('Event_model');
         $this->load->model('News_model');
         $this->load->model('Show_list_model');
+        $this->load->model('Galeri_model');
         date_default_timezone_set("Asia/Jakarta");
 
     }
@@ -20,6 +21,7 @@ class Awal extends CI_Controller
     public function index()
     {
 		$data['dj'] = $this->Dj_model->get_all();
+		$data['galeri'] = $this->Galeri_model->get_all();
 		$data['event3'] = $this->Event_model->get_3();
 		$data['news2'] = $this->News_model->get_2();
 		$data['show'] = $this->Show_list_model->get_all();
@@ -50,10 +52,13 @@ class Awal extends CI_Controller
     }
     public function galleryPage()
     {
-        $this->load->view('landing/templates/header');
-        $this->load->view('landing/templates/menu');
-        $this->load->view('landing/pages/gallery');
-        $this->load->view('landing/templates/footer');
+		$data['galeri'] = $this->Galeri_model->get_all();
+		$data['galeri_judul'] = $this->Galeri_model->get_uniq();
+
+        $this->load->view('landing/templates/header',$data);
+        $this->load->view('landing/templates/menu',$data);
+        $this->load->view('landing/pages/gallery',$data);
+        $this->load->view('landing/templates/footer',$data);
     }
 
 }

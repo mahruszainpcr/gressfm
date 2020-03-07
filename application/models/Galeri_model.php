@@ -31,6 +31,13 @@ class Galeri_model extends CI_Model
         $this->db->order_by($this->id, $this->order);
         return $this->db->get($this->table)->result();
     }
+    function get_uniq()
+    {
+        
+        $this->db->select('judul');
+        $this->db->distinct();
+        return $this->db->get($this->table)->result();
+    }
 
     // get data by id
     function get_by_id($id)
