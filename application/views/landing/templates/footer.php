@@ -52,41 +52,24 @@
             <div class="col-sm-4 col-sm-offset-1">
 
                 <div class="bot1_title">LATEST NEWS</div>
-
+                <?php 
+		foreach($news2 as $u){ 
+		?>
                 <div class="latest1">
-                    <a href="#" class="clearfix">
-                        <figure><img src="https://cdn1-production-images-kly.akamaized.net/PBAMYOI8sv7HJon1lwcPVbA0mow=/640x360/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/3035773/original/088075300_1580291852-FWD1.jpg" style="height:59px;width:59px;" alt=""></figure>
+                    <a href="<?=base_url('awal/beritaNext/'.$u->id_news)?>" class="clearfix">
+                        <figure><img src="<?=base_url('assets/news/'.$u->foto);?>" style="height:59px;width:59px;" alt=""></figure>
                         <div class="caption">
-                            <div class="txt1">Critical Armor, Asuransi Penyakit Kritis dengan Beragam Klaim
+                            <div class="txt1"><?= $u->judul ?>
                             </div>
                             <div class="txt2">January 29 - 2020</div>
                         </div>
                     </a>
                 </div>
-                <div class="latest1">
-                    <a href="#" class="clearfix">
-                        <figure><img src="https://cdn1-production-images-kly.akamaized.net/3A5KzqX4SiS7FvU_UH7xOg0zH1c=/640x360/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/3028256/original/054575900_1579604648-FWD_Life_1.jpg" style="height:59px;width:59px;" alt=""></figure>
-                        <div class="caption">
-                            <div class="txt1">Jadi Penutup FWD Unstoppable Music, Kahitna Sukses Memukau Nasabah FWD Life
-                            </div>
-                            <div class="txt2">January 21 - 2020</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="latest1 last">
-                    <a href="#" class="clearfix">
-                        <figure><img src="https://cdn0-production-images-kly.akamaized.net/SYCr6Rt44BWBeHW1Y7UhbK-dbF8=/139x117:3953x2266/640x360/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/3070432/original/072489100_1583502362-20200305_212716.jpg" style="height:59px;width:59px;" alt=""></figure>
-                        <div class="caption">
-                            <div class="txt1">Kemeriahan Unstoppable Music Bersama Sheila On 7 Menjadi Rangkaian Anniversary FWD Life ke 7
-                            </div>
-                            <div class="txt2">January 11 - 2020</div>
-                        </div>
-                    </a>
-                </div>
+                <?php } ?>
 
                 
 
-                <a href="<?= base_url('awal/beritaNext') ?>" class="btn-default btn3">READ MORE</a>
+                <a href="<?=base_url('awal')?>#news" class="btn-default btn3">READ MORE</a>
 
             </div>
         </div>

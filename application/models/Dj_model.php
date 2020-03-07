@@ -28,8 +28,15 @@ class Dj_model extends CI_Model
     // get all
     function get_all()
     {
+
         $this->db->order_by($this->id, $this->order);
-        return $this->db->get($this->table)->result();
+           return $this->db->get($this->table)->result();
+    }
+    function show_all(){
+        $this->db->select('*');
+        $this->db->from('dj');
+        $query = $this->db->get();
+        return $query;
     }
 
     // get data by id

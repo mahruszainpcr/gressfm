@@ -6,7 +6,7 @@
 
         <div class="kand1 animated" data-animation="fadeInUp" data-animation-delay="200"></div>
 
-        <div class="title2 animated" data-animation="fadeInUp" data-animation-delay="300">FEATURED SONGS</div>
+        <div class="title2 animated" data-animation="fadeInUp" data-animation-delay="300">OUR DJ</div>
 
 
     </div>
@@ -15,67 +15,23 @@
     <div class="slick-slider-wrapper">
         <div class="container">
             <div class="slick-slider slider center">
+            <?php 
+		foreach($dj as $u){ 
+		?>
                 <div>
                     <div class="slick-slider-inner">
-                        <figure><img src="<?=base_url('site/');?>images/artist/artist.jpg" alt=""
+                        <figure><img src="<?=base_url('assets/dj/'.$u->foto);?>" alt=""
                                 class="img-responsive"></figure>
                         <div class="caption">
-                            <div class="txt1"><span>Music - John Coltrain</span></div>
-                            <div class="txt2"><span>The Dream Of My Life</span></div>
-                            <div class="txt3"><a href="#" class="btn-default btn1">MORE EPISODES</a></div>
+                            <div class="txt1"><span><?= $u->nama_dj ?></span></div>
+                            <div class="txt2"><span><?= $u->quote ?></span></div>
+                            <!-- <div class="txt3"><a href="#" class="btn-default btn1">MORE EPISODES</a></div> -->
                         </div>
                         <div class="slick-slider-overlay"></div>
                     </div>
                 </div>
-                <div>
-                    <div class="slick-slider-inner">
-                        <figure><img src="<?=base_url('site/');?>images/artist/artist_2.jpg" alt=""
-                                class="img-responsive"></figure>
-                        <div class="caption">
-                            <div class="txt1"><span>Music - Janette Colins</span></div>
-                            <div class="txt2"><span>The Music Is My Life</span></div>
-                            <div class="txt3"><a href="#" class="btn-default btn1">MORE EPISODES</a></div>
-                        </div>
-                        <div class="slick-slider-overlay"></div>
-                    </div>
-                </div>
-                <div>
-                    <div class="slick-slider-inner">
-                        <figure><img src="<?=base_url('site/');?>images/artist/artist_1.jpg" alt=""
-                                class="img-responsive"></figure>
-                        <div class="caption">
-                            <div class="txt1"><span>Classical Music - Anna Johns</span></div>
-                            <div class="txt2"><span>Shopin - Nocturnes</span></div>
-                            <div class="txt3"><a href="#" class="btn-default btn1">MORE EPISODES</a></div>
-                        </div>
-                        <div class="slick-slider-overlay"></div>
-                    </div>
-                </div>
-                <div>
-                    <div class="slick-slider-inner">
-                        <figure><img src="<?=base_url('site/');?>images/artist/artist_3.jpg" alt=""
-                                class="img-responsive"></figure>
-                        <div class="caption">
-                            <div class="txt1"><span>Music - Lino Ventura</span></div>
-                            <div class="txt2"><span>La Prima Di Casta</span></div>
-                            <div class="txt3"><a href="#" class="btn-default btn1">MORE EPISODES</a></div>
-                        </div>
-                        <div class="slick-slider-overlay"></div>
-                    </div>
-                </div>
-                <div>
-                    <div class="slick-slider-inner">
-                        <figure><img src="<?=base_url('site/');?>images/artist/artist_4.jpg" alt=""
-                                class="img-responsive"></figure>
-                        <div class="caption">
-                            <div class="txt1"><span>Music - Amanda Geferson</span></div>
-                            <div class="txt2"><span>Non Troppo Di Piano</span></div>
-                            <div class="txt3"><a href="#" class="btn-default btn1">MORE EPISODES</a></div>
-                        </div>
-                        <div class="slick-slider-overlay"></div>
-                    </div>
-                </div>
-
+                
+                <?php } ?>
 
 
 
@@ -89,23 +45,25 @@
 <div id="collection">
     <div class="container">
 
-        <div class="title1 animated" data-animation="fadeInUp" data-animation-delay="100">Contact To
+        <div class="title1 animated" data-animation="fadeInUp" data-animation-delay="100">Goes to
         </div>
-        <div class="title2 animated" data-animation="fadeInUp" data-animation-delay="200">OUR DJ</div>
-        <div class="title4 animated" data-animation="fadeInUp" data-animation-delay="300">DJ kami yang akan selalu
-            menemani dari awal yang cerah menuju senja sendu
+        <div class="title2 animated" data-animation="fadeInUp" data-animation-delay="200">Events</div>
+        <div class="title4 animated" data-animation="fadeInUp" data-animation-delay="300">
         </div>
 
         <br><br><br>
 
         <div class="row">
+        <?php 
+		foreach($event3 as $u){ 
+		?>
             <div class="col-sm-4">
                 <div class="artists1 clearfix animated" data-animation="fadeInUp" data-animation-delay="300">
-                    <figure><img src="<?=base_url('site/');?>images/artist/dj.jpg" alt="" class="img-responsive">
+                    <figure><img src="<?=base_url('assets/event/'.$u->foto);?>" alt="" class="img-responsive">
                     </figure>
                     <div class="caption">
                         <div class="txt1">The Muskeeter</div>
-                        <div class="txt2">Herman Alamsyah</div>
+                        <div class="txt2"><?= $u->nama_event ?></div>
                         <div class="social2_wrapper">
                             <ul class="social2 clearfix">
                                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -116,40 +74,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4">
-                <div class="artists1 clearfix animated" data-animation="fadeInUp" data-animation-delay="400">
-                    <figure><img src="<?=base_url('site/');?>images/artist/dj2.jpg" alt="" class="img-responsive">
-                    </figure>
-                    <div class="caption">
-                        <div class="txt1">The Louder</div>
-                        <div class="txt2">Indra Senayan</div>
-                        <div class="social2_wrapper">
-                            <ul class="social2 clearfix">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="artists1 clearfix animated" data-animation="fadeInUp" data-animation-delay="500">
-                    <figure><img src="<?=base_url('site/');?>images/artist/dj3.jpg" alt="" class="img-responsive">
-                    </figure>
-                    <div class="caption">
-                        <div class="txt1">The Singer</div>
-                        <div class="txt2">Rizki Adi</div>
-                        <div class="social2_wrapper">
-                            <ul class="social2 clearfix">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <?php } ?>
         </div>
 
     </div>
@@ -419,7 +344,7 @@
         </div>
     </div>
 </div>
-<div id="news">
+<div id="news" style="background-color:#1b1b1b;" class="p-t-5">
     <div class="container">
         <div class="title2 animated">GRESS NEWS</div>
 
@@ -427,54 +352,27 @@
         <br><br>
 
         <div class="row">
+        <?php 
+		foreach($news2 as $u){ 
+		?>
             <div class="col-sm-6">
                 <div class="thumb7 animated">
                     <div class="thumbnail clearfix">
                         <figure class="">
-                            <img src="https://cdn0-production-images-kly.akamaized.net/SYCr6Rt44BWBeHW1Y7UhbK-dbF8=/139x117:3953x2266/640x360/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/3070432/original/072489100_1583502362-20200305_212716.jpg"
+                            <img src="<?=base_url('assets/news/'.$u->foto);?>"
                                 alt="" class="img-responsive">
                         </figure>
                         <div class="caption">
-                            <div class="title">Kemeriahan Unstoppable Music Bersama Sheila On 7 Menjadi Rangkaian
-                                Anniversary FWD Life ke 7</div>
+                            <div class="title"><?= $u->judul ?></div>
                             <p>
-                                "Selamat datang di Lucy in The Sky, Selamat datang buat teman-teman passionate people.
-                                Tepuk tangan untuk FWD Life. Asuransi Hidup," kata Duta yang kemudian disambut tepuk
-                                tangan para penonton.
-
-                                Setelah mengajak passionate people bernyanyi lagu-lagu tahun 99 dan 2000 an, Sheila On 7
-                                lalu mengajak penonton ke tahun 2011 untuk bernyanyi 'Hari Bersamanya' Dilanjutkan
-                                dengan lagu-lagu yang tergolong baru 'Film Favorit' dan 'Lapang Dada'.
+                                <?= substr($u->berita,0,250 )?>
                             </p>
-                            <a href="<?=base_url('awal/beritaNext')?>" class="btn-default btn5">Read More</a>
+                            <a href="<?=base_url('awal/beritaNext/'.$u->id_news)?>" class="btn-default btn5">Read More</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6">
-                <div class="thumb7 animated">
-                    <div class="thumbnail clearfix">
-                        <figure class="">
-                            <img src="https://cdn1-production-images-kly.akamaized.net/PBAMYOI8sv7HJon1lwcPVbA0mow=/640x360/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/3035773/original/088075300_1580291852-FWD1.jpg"
-                                alt="" class="img-responsive">
-                        </figure>
-                        <div class="caption">
-                            <div class="title">Critical Armor, Asuransi Penyakit Kritis dengan Beragam Klaim</div>
-                            <p>
-                                Liputan6.com, Jakarta Tak ingin ada orang yang ingin menderita penyakit serius. Namun
-                                faktanya setiap orang pasti punya faktor risiko terhadap suatu penyakit. Kemungkinan
-                                atau faktor risiko itu datang dari riwayat keluarga.
-
-                                Nah ketika sudah mengetahui riwayat keluarga terhadap Idealnya adalah memiliki asuransi,
-                                salah satunya asuransi penyakit kritis. Adit Trivedi selaku Wakil Direktur Utama FWD
-                                Life mengatakan bahwa diagnosis penyakit kritis adalah hal yang tak terduga, dan tak
-                                diharapkan semua orang.
-                            </p>
-                            <a href="#" class="btn-default btn5">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <?php } ?>
         </div>
     </div>
 </div>

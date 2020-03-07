@@ -36,11 +36,11 @@
                         </button>
                         <div class="navbar-collapse navbar-collapse_ collapse">
                             <ul class="nav navbar-nav sf-menu clearfix">
-                                <li class="sub-menu sub-menu-1"><a href="<?=base_url('awal')?>#home">Home<em></em></a>
+                                <li class="sub-menu sub-menu-1"><a href="<?=base_url('awal')?>#home">Home</a>
 
                                 </li>
-                                <li><a href="<?=base_url('awal')?>#featured">FEATURED</a></li>
-                                <li><a href="<?=base_url('awal')?>#collection">Our DJ</a></li>
+                                <li><a href="<?=base_url('awal')?>#featured">OUR DJ</a></li>
+                                <li><a href="<?=base_url('awal')?>#collection">Event</a></li>
                                 <li class="sub-menu sub-menu-1"><a href="javascript:void(0);">Halaman<em></em></a>
                                     <ul>
                                         <li><a href="<?=base_url('awal/aboutPage')?>">Tentang</a></li>

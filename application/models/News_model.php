@@ -31,12 +31,24 @@ class News_model extends CI_Model
         $this->db->order_by($this->id, $this->order);
         return $this->db->get($this->table)->result();
     }
+     function get_2()
+    {
+        $this->db->order_by($this->id, $this->order);
+        return $this->db->get($this->table,2)->result();
+    }
+    function get_id($id_news){
+        return $this->db->where('id_news', $id_news); 
+    }
 
     // get data by id
     function get_by_id($id)
     {
         $this->db->where($this->id, $id);
         return $this->db->get($this->table)->row();
+    }
+    function detail_data($where){
+		return $this->db->get_where('news',$where);
+
     }
 
     // get total rows
