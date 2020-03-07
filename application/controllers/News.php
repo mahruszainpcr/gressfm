@@ -1,22 +1,22 @@
 <?php
 
-if (!defined('BASEPATH'))
+if (!defined('BASEPATH')) {
     exit('No direct script access allowed');
+}
 
 class News extends CI_Controller
 {
-    function __construct()
+    public function __construct()
     {
         parent::__construct();
 
         $this->load->model('News_model');
         $this->load->library('form_validation');
 
-        if(!$this->session->userdata('logined') || $this->session->userdata('logined') != true)
-        {
+        if (!$this->session->userdata('logined') || $this->session->userdata('logined') != true) {
             redirect('/');
-        }        
-	$this->load->library('datatables');
+        }
+        $this->load->library('datatables');
     }
 
     public function index()
@@ -24,7 +24,8 @@ class News extends CI_Controller
         $this->load->view('news/news_list');
     }
 
-    public function json() {
+    public function json()
+    {
         header('Content-Type: application/json');
         echo $this->News_model->json();
     }
@@ -34,13 +35,13 @@ class News extends CI_Controller
         $row = $this->News_model->get_by_id($id);
         if ($row) {
             $data = array(
-		'id_news' => $row->id_news,
-		'judul' => $row->judul,
-		'foto' => $row->foto,
-		'berita' => $row->berita,
-		'tanggal' => $row->tanggal,
-		'kategori' => $row->kategori,
-	    );
+                'id_news' => $row->id_news,
+                'judul' => $row->judul,
+                'foto' => $row->foto,
+                'berita' => $row->berita,
+                'tanggal' => $row->tanggal,
+                'kategori' => $row->kategori,
+            );
             $this->load->view('news/news_read', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
@@ -53,35 +54,30 @@ class News extends CI_Controller
         $data = array(
             'button' => 'Create',
             'action' => site_url('news/create_action'),
-	    'id_news' => set_value('id_news'),
-	    'judul' => set_value('judul'),
-	    'foto' => set_value('foto'),
-	    'berita' => set_value('berita'),
-	    'tanggal' => set_value('tanggal'),
-	    'kategori' => set_value('kategori'),
-	);
+            'id_news' => set_value('id_news'),
+            'judul' => set_value('judul'),
+            'foto' => set_value('foto'),
+            'berita' => set_value('berita'),
+            'tanggal' => set_value('tanggal'),
+            'kategori' => set_value('kategori'),
+        );
         $this->load->view('news/news_form', $data);
     }
 
     public function create_action()
     {
-        $this->_rules();
 
-        if ($this->form_validation->run() == FALSE) {
-            $this->create();
-        } else {
-            $data = array(
-		'judul' => $this->input->post('judul',TRUE),
-		'foto' => $this->input->post('foto',TRUE),
-		'berita' => $this->input->post('berita',TRUE),
-		'tanggal' => $this->input->post('tanggal',TRUE),
-		'kategori' => $this->input->post('kategori',TRUE),
-	    );
+        $data = array(
+            'judul' => $this->input->post('judul', true),
+            'foto' => $this->_uploadImage(),
+            'berita' => $this->input->post('berita', true),
+            'tanggal' => $this->input->post('tanggal', true),
+            'kategori' => $this->input->post('kategori', true),
+        );
 
-            $this->News_model->insert($data);
-            $this->session->set_flashdata('message', 'Create Record Success');
-            redirect(site_url('news'));
-        }
+        $this->News_model->insert($data);
+        $this->session->set_flashdata('message', 'Create Record Success');
+        redirect(site_url('news'));
     }
 
     public function update($id)
@@ -92,13 +88,13 @@ class News extends CI_Controller
             $data = array(
                 'button' => 'Update',
                 'action' => site_url('news/update_action'),
-		'id_news' => set_value('id_news', $row->id_news),
-		'judul' => set_value('judul', $row->judul),
-		'foto' => set_value('foto', $row->foto),
-		'berita' => set_value('berita', $row->berita),
-		'tanggal' => set_value('tanggal', $row->tanggal),
-		'kategori' => set_value('kategori', $row->kategori),
-	    );
+                'id_news' => set_value('id_news', $row->id_news),
+                'judul' => set_value('judul', $row->judul),
+                'foto' => set_value('foto', $row->foto),
+                'berita' => set_value('berita', $row->berita),
+                'tanggal' => set_value('tanggal', $row->tanggal),
+                'kategori' => set_value('kategori', $row->kategori),
+            );
             $this->load->view('news/news_form', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
@@ -108,23 +104,36 @@ class News extends CI_Controller
 
     public function update_action()
     {
-        $this->_rules();
+        if (!empty($_FILES["foto"]["name"])) {
+            $row = $this->Galeri_model->get_by_id($this->input->post('id', true));
 
-        if ($this->form_validation->run() == FALSE) {
-            $this->update($this->input->post('id_news', TRUE));
+            if ($row->foto != "default.jpg") {
+                $filename = explode(".", $row->foto)[0];
+                array_map('unlink', glob(FCPATH . "assets/galeri/$filename.*"));
+            }
+            $data = array(
+                'judul' => $this->input->post('judul', true),
+                'foto' => $this->_uploadImage(),
+                'berita' => $this->input->post('berita', true),
+                'tanggal' => $this->input->post('tanggal', true),
+                'kategori' => $this->input->post('kategori', true),
+            );
+
         } else {
             $data = array(
-		'judul' => $this->input->post('judul',TRUE),
-		'foto' => $this->input->post('foto',TRUE),
-		'berita' => $this->input->post('berita',TRUE),
-		'tanggal' => $this->input->post('tanggal',TRUE),
-		'kategori' => $this->input->post('kategori',TRUE),
-	    );
+                'judul' => $this->input->post('judul', true),
+                // 'foto' => $this->input->post('foto', true),
+                'berita' => $this->input->post('berita', true),
+                'tanggal' => $this->input->post('tanggal', true),
+                'kategori' => $this->input->post('kategori', true),
+            );
 
-            $this->News_model->update($this->input->post('id_news', TRUE), $data);
-            $this->session->set_flashdata('message', 'Update Record Success');
-            redirect(site_url('news'));
         }
+
+        $this->News_model->update($this->input->post('id_news', true), $data);
+        $this->session->set_flashdata('message', 'Update Record Success');
+        redirect(site_url('news'));
+
     }
 
     public function delete($id)
@@ -132,6 +141,11 @@ class News extends CI_Controller
         $row = $this->News_model->get_by_id($id);
 
         if ($row) {
+            if ($row->foto != "default.jpg") {
+                $filename = explode(".", $row->foto)[0];
+                array_map('unlink', glob(FCPATH . "assets/news/$filename.*"));
+            }
+
             $this->News_model->delete($id);
             $this->session->set_flashdata('message', 'Delete Record Success');
             redirect(site_url('news'));
@@ -140,17 +154,27 @@ class News extends CI_Controller
             redirect(site_url('news'));
         }
     }
+    private function _uploadImage()
+    {
+        $config['upload_path'] = './assets/news/';
+        $config['allowed_types'] = 'gif|jpg|png';
+        $config['file_name'] = 'news_' . time();
+        $config['overwrite'] = true;
+        // $config['max_width']            = 1024;
+        // $config['max_height']           = 768;
 
+        $this->load->library('upload', $config);
+
+        if ($this->upload->do_upload('foto')) {
+            $data = $this->upload->data();
+            return $data['file_name'];
+        }
+
+        return "default_dj.jpg";
+    }
     public function _rules()
     {
-	$this->form_validation->set_rules('judul', 'judul', 'trim|required');
-	$this->form_validation->set_rules('foto', 'foto', 'trim|required');
-	$this->form_validation->set_rules('berita', 'berita', 'trim|required');
-	$this->form_validation->set_rules('tanggal', 'tanggal', 'trim|required');
-	$this->form_validation->set_rules('kategori', 'kategori', 'trim|required');
 
-	$this->form_validation->set_rules('id_news', 'id_news', 'trim');
-	$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
     }
 
 }

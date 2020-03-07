@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SOCIANOVATION Web Administration</title>
+    <title>GressFM Web Administration</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url() ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
