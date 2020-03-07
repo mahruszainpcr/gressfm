@@ -38,22 +38,25 @@ class Awal extends CI_Controller
 
 
 		$data['newsDetail'] = $this->News_model->detail_data($where,'news')->result();
-        $this->load->view('landing/templates/header');
-        $this->load->view('landing/templates/menu');
+        $this->load->view('landing/templates/header',$data);
+        $this->load->view('landing/templates/menu',$data);
         $this->load->view('landing/pages/news',$data);
-        $this->load->view('landing/templates/footer');
+        $this->load->view('landing/templates/footer',$data);
     }
     public function aboutPage()
     {
-        $this->load->view('landing/templates/header');
-        $this->load->view('landing/templates/menu');
-        $this->load->view('landing/pages/about');
-        $this->load->view('landing/templates/footer');
+		$data['news2'] = $this->News_model->get_2();
+
+        $this->load->view('landing/templates/header',$data);
+        $this->load->view('landing/templates/menu',$data);
+        $this->load->view('landing/pages/about',$data);
+        $this->load->view('landing/templates/footer',$data);
     }
     public function galleryPage()
     {
 		$data['galeri'] = $this->Galeri_model->get_all();
 		$data['galeri_judul'] = $this->Galeri_model->get_uniq();
+		$data['news2'] = $this->News_model->get_2();
 
         $this->load->view('landing/templates/header',$data);
         $this->load->view('landing/templates/menu',$data);
