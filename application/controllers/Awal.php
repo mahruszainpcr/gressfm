@@ -13,6 +13,7 @@ class Awal extends CI_Controller
         $this->load->model('Event_model');
         $this->load->model('News_model');
         $this->load->model('Show_list_model');
+        $this->load->model('Komentar_model');
         $this->load->model('Galeri_model');
         date_default_timezone_set("Asia/Jakarta");
 
@@ -31,6 +32,25 @@ class Awal extends CI_Controller
         $this->load->view('landing/pages/index',$data);
         $this->load->view('landing/templates/footer',$data);
     }
+    public function insertKomentar(){
+        
+            $nama = $this->input->post('nama');
+            $email = $this->input->post('email');
+            $pesan = $this->input->post('pesan');
+        
+            $data = array(
+                'nama' => $nama,
+                'email' =>  $email,
+                'pesan' => $pesan,
+               
+            );
+            var_dump($data);
+            die;
+            $this->db->insert('komentar', $data);
+        
+            redirect('index');
+        }
+    
     public function beritaNext($id_news)
     {
         $where = array('id_news' => $id_news);

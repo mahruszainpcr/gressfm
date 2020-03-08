@@ -21,7 +21,7 @@
     </div>
     <div class="form-group">
         <label for="date">Tanggal <?php echo form_error('tanggal') ?></label>
-        <input type="text" class="form-control" name="tanggal" id="tanggal" placeholder="Tanggal"
+        <input type="date" class="form-control" name="tanggal" id="tanggal" placeholder="Tanggal"
             value="<?php echo $tanggal; ?>" />
     </div>
     <input type="hidden" name="id_galeri" value="<?php echo $id_galeri; ?>" />

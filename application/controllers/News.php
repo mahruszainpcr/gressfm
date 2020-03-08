@@ -71,7 +71,7 @@ class News extends CI_Controller
             'judul' => $this->input->post('judul', true),
             'foto' => $this->_uploadImage(),
             'berita' => $this->input->post('berita', true),
-            'tanggal' => $this->input->post('tanggal', true),
+            'tanggal' => 'now()',
             'kategori' => $this->input->post('kategori', true),
         );
 

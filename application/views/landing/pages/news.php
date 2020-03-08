@@ -73,7 +73,7 @@
                             </div>
                         </div>
         <?php } ?>
-                        <div class="num-comments">3 Comments</div>
+                        <!-- <div class="num-comments">3 Comments</div>
 
                         <div class="comment-block clearfix">
                             <figure>
@@ -130,9 +130,9 @@
                                     His many legs, pitifully r it and seemed ready to slide off any m
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
-                        <div class="live-comment">
+                        <!-- <div class="live-comment">
                             <div class="live-comment-title">Leave a Comment</div>
                             <div class="live-comment-form">
 
@@ -177,7 +177,7 @@
 
                             </div>
 
-                        </div>
+                        </div> -->
 
 
                     </div>

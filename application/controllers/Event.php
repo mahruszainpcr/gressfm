@@ -146,7 +146,7 @@ class Event extends CI_Controller
                     'deskripsi' => $this->input->post('deskripsi', true),
                     'waktu_mulai' => $this->input->post('waktu_mulai', true),
                     'waktu_selesai' => $this->input->post('waktu_selesai', true),
-                    'date_created' => 'now(',
+                    'date_created' => 'now()',
                     'is_active' => 1,
                 );
             }

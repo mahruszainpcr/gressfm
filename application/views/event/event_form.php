@@ -31,12 +31,12 @@
     </div>
     <div class="form-group">
         <label for="date">Waktu Mulai <?php echo form_error('waktu_mulai') ?></label>
-        <input type="text" class="form-control" name="waktu_mulai" id="waktu_mulai" placeholder="Waktu Mulai"
+        <input type="time" class="form-control" name="waktu_mulai" id="waktu_mulai" placeholder="Waktu Mulai"
             value="<?php echo $waktu_mulai; ?>" />
     </div>
     <div class="form-group">
         <label for="date">Waktu Selesai <?php echo form_error('waktu_selesai') ?></label>
-        <input type="text" class="form-control" name="waktu_selesai" id="waktu_selesai" placeholder="Waktu Selesai"
+        <input type="time" class="form-control" name="waktu_selesai" id="waktu_selesai" placeholder="Waktu Selesai"
             value="<?php echo $waktu_selesai; ?>" />
     </div>
     <input type="hidden" name="id" value="<?php echo $id; ?>" />
